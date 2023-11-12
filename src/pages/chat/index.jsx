@@ -1,12 +1,14 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import  { useState } from 'react';
 import './chat.css';
+import PropTypes from 'prop-types';
 
-interface MessageProps {
-  user: string;
-  content: string;
-}
+// Remova a declaração de interface
+// interface MessageProps {
+//   user: string;
+//   content: string;
+// }
 
-const Message: React.FC<MessageProps> = ({ user, content }) => (
+const Message = ({ user, content }) => (
   <div className={`message-item ${user === 'Você' ? 'message-user' : ''}`}>
     <div className="msg-user">
       <strong>{`${user} diz:`}</strong>
@@ -15,18 +17,24 @@ const Message: React.FC<MessageProps> = ({ user, content }) => (
   </div>
 );
 
-const Chat: React.FC = () => {
+// Se você estiver usando PropTypes, adicione a validação de tipo aqui
+Message.propTypes = {
+  user: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
+
+const Chat = () => {
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState<MessageProps[]>([
+  const [messages, setMessages] = useState([
     { user: 'Atendente', content: 'Em que posso lhe ajudar?' },
     // Adicione mais mensagens conforme necessário
   ]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event) => {
     setMessage(event.target.value);
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (message.trim() !== '') {
       setMessages((prevMessages) => [
