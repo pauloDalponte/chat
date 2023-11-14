@@ -5,7 +5,7 @@ import Chat from "../pages/chat";
 const Router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/chat" element={<Chat />} />
             </Route>
     )
