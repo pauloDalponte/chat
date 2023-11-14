@@ -24,10 +24,11 @@ const MeuComponente = () => {
         onChange={handleChange}
         placeholder="Digite seu nome"
       />
-      <p>Olá, {nome || 'Visitante'}!</p>
+      <p className = "Ola">Olá, {nome || 'Visitante'}!</p>
       <button type="button" onClick={irParaChat}>
         Go Chat
       </button>
+      <p className="Dupla">Dupla: Paulo Cesar Dal Ponte/Bruno Rosso</p>
     </div>
   );
 };

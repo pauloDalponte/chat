@@ -19,6 +19,7 @@ body {
 
 h1 {
   margin-bottom: 16px;
+  font-size: 20px;
 }
 
 input {
@@ -31,21 +32,29 @@ input {
   border-radius: 4px;
 }
 
-p {
+.ola {
   margin-bottom: 16px;
 }
 
+.Dupla {
+  font-size: 10px;
+  margin-top: 10px; 
+}
+
+
+
 button {
-  background-color: #4caf50;
+  background-color: rgb(93, 138, 101);
   color: white;
   font-weight: bold;
   font-size: 18px;
-  padding: 10px;
-  border: 0;
-  border-radius: 4px;
+  padding: 15px;
+  border-radius: 94px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
+
 button:hover {
-  background-color: #45a049;
+  background-color: rgb(84, 255, 50);
 }
